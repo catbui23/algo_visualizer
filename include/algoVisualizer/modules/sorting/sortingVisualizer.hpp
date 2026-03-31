@@ -20,8 +20,7 @@ public:
 
 private:
     string mName;
-    unsigned int mTotalComp;
-    unsigned int mTotalSwap;
+    unsigned int mCntOp;
     unsigned int mUnit;
     unsigned int mMaxHeight;
     vector<unsigned int> mArr;

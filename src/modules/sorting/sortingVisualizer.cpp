@@ -21,8 +21,7 @@ constexpr string_view COLUMN_CELL = u8"\u2588";
 SortingVisualizer::SortingVisualizer(const string name,
     const vector<unsigned int>& arr)
     : mName(name)
-    , mTotalComp(0)
-    , mTotalSwap(0)
+    , mCntOp(0)
     , mArr(arr)
 {
     calculateUnit();
@@ -39,13 +38,12 @@ void SortingVisualizer::render() const { }
 
 void SortingVisualizer::printHeader() const
 {
-    cout << "Algorithm: " << mName << "\nCompare: " << mTotalComp
-         << "\nSwap: " << mTotalSwap << "\n";
+    cout << "Algorithm: " << mName << "\nNumber of Operations: " << mCntOp << "\n";
 }
 
 void SortingVisualizer::compareStep(const size_t i, const size_t j)
 {
-    mTotalComp++;
+    mCntOp++;
     printFrame([&](size_t idx) {
         if (idx == i || idx == j) {
             cout << ANSI_COLOR::YELLOW;
@@ -57,7 +55,7 @@ void SortingVisualizer::compareStep(const size_t i, const size_t j)
 
 void SortingVisualizer::swapStep(const size_t i, const size_t j)
 {
-    mTotalSwap++;
+    mCntOp++;
     swap(mArr[i], mArr[j]);
     printFrame([&](size_t idx) {
         if (idx == i || idx == j) {
@@ -70,6 +68,7 @@ void SortingVisualizer::swapStep(const size_t i, const size_t j)
 
 void SortingVisualizer::assignStep(const size_t i, const unsigned int value)
 {
+    mCntOp++;
     mArr[i] = value;
     printFrame([&](size_t idx) {
         if (idx == i) {
@@ -167,5 +166,5 @@ void SortingVisualizer::calculateUnit()
 
 void SortingVisualizer::resetFrame() const
 {
-    cout << "\033[" << to_string(mMaxHeight + 3) << "A\033[1G";
+    cout << "\033[" << to_string(mMaxHeight + 2) << "A\033[1G";
 }
