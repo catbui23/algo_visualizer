@@ -1,5 +1,4 @@
 #include "algoVisualizer/algorithm/sorting/implementations/BubbleSort.hpp"
-#include "algoVisualizer/algorithm/sorting/interface/SortStep.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
 #include <utility>
 #include <vector>
@@ -26,12 +25,10 @@ void BubbleSort::runStep()
     for (size_t i = 0; i < n - 1; ++i) {
         isSwap = false;
         for (size_t j = 0; j < n - i - 1; ++j) {
-            SortStep compareStep = { j, j + 1, StepType::COMPARE };
-            mVisualizer.updateSortStep(compareStep);
+            mVisualizer.compareStep(j, j + 1);
             if (mArr[j] > mArr[j + 1]) {
-                SortStep swapStep = { j, j + 1, StepType::SWAP };
                 swap(mArr[j], mArr[j + 1]);
-                mVisualizer.updateSortStep(swapStep);
+                mVisualizer.swapStep(j, j + 1);
                 isSwap = true;
             }
         }

@@ -37,33 +37,52 @@ SortingVisualizer::~SortingVisualizer()
 
 void SortingVisualizer::render() const { }
 
-void SortingVisualizer::updateSortStep(const SortStep& step)
-{
-    if (step.type == StepType::SWAP) {
-        mTotalSwap++;
-        swap(mArr[step.i], mArr[step.j]);
-    } else {
-        mTotalComp++;
-    }
-    printFrame(step);
-    this_thread::sleep_for(REFRESH_TIME);
-}
-
 void SortingVisualizer::printHeader() const
 {
     cout << "Algorithm: " << mName << "\nCompare: " << mTotalComp
          << "\nSwap: " << mTotalSwap << "\n";
 }
 
-void SortingVisualizer::printFrame(const SortStep& step) const
+void SortingVisualizer::compareStep(const size_t i, const size_t j)
 {
-    printHeader();
-    printSortStep(step);
-    resetFrame();
+    mTotalComp++;
+    printFrame([&](size_t idx) {
+        if (idx == i || idx == j) {
+            cout << ANSI_COLOR::YELLOW;
+        } else {
+            cout << ANSI_COLOR::RESET;
+        }
+    });
+}
+
+void SortingVisualizer::swapStep(const size_t i, const size_t j)
+{
+    mTotalSwap++;
+    swap(mArr[i], mArr[j]);
+    printFrame([&](size_t idx) {
+        if (idx == i || idx == j) {
+            cout << ANSI_COLOR::RED;
+        } else {
+            cout << ANSI_COLOR::RESET;
+        }
+    });
+}
+
+void SortingVisualizer::assignStep(const size_t i, const unsigned int value)
+{
+    mArr[i] = value;
+    printFrame([&](size_t idx) {
+        if (idx == i) {
+            cout << ANSI_COLOR::RED;
+        } else {
+            cout << ANSI_COLOR::RESET;
+        }
+    });
 }
 
 void SortingVisualizer::printFinalFrame() const
 {
+    resetFrame();
     printHeader();
     for (int t = 0; t < mArr.size(); ++t) {
         for (unsigned int line = 1; line <= mMaxHeight; ++line) {
@@ -92,20 +111,16 @@ void SortingVisualizer::printFinalFrame() const
     }
 }
 
-void SortingVisualizer::printSortStep(const SortStep& step) const
+void SortingVisualizer::printFrame(function<void(size_t)> highlightFn) const
 {
-    // move cursor to the starting point (compare line)
-    string stepColor = (step.type == StepType::COMPARE) ? string(ANSI_COLOR::YELLOW) : string(ANSI_COLOR::RED);
+    resetFrame();
+    printHeader();
     for (unsigned int line = 1; line <= mMaxHeight; ++line) {
-        for (size_t i = 0; i < mArr.size(); ++i) {
-            unsigned int n = mArr[i];
+        for (size_t idx = 0; idx < mArr.size(); ++idx) {
+            unsigned int n = mArr[idx];
             n /= mUnit;
             if (line + n > mMaxHeight) {
-                if (i == step.i || i == step.j) {
-                    cout << stepColor;
-                } else {
-                    cout << ANSI_COLOR::RESET;
-                }
+                highlightFn(idx);
                 cout << COLUMN_CELL;
             } else {
                 cout << " ";
@@ -114,6 +129,7 @@ void SortingVisualizer::printSortStep(const SortStep& step) const
         cout << "\n"
              << ANSI_COLOR::RESET;
     }
+    this_thread::sleep_for(REFRESH_TIME);
 }
 
 void SortingVisualizer::printStarterFrame() const
@@ -130,7 +146,6 @@ void SortingVisualizer::printStarterFrame() const
         }
         cout << "\n";
     }
-    resetFrame();
 }
 
 void SortingVisualizer::calculateUnit()
@@ -152,5 +167,5 @@ void SortingVisualizer::calculateUnit()
 
 void SortingVisualizer::resetFrame() const
 {
-    cout << "\033[" << to_string(mMaxHeight + 3) << "A\0331G";
+    cout << "\033[" << to_string(mMaxHeight + 3) << "A\033[1G";
 }

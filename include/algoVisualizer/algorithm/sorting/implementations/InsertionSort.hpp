@@ -6,16 +6,15 @@
 
 using namespace std;
 
-class BubbleSort : private ISortingAlgorithm
-{
+class InsertionSort : private ISortingAlgorithm {
 public:
-    BubbleSort(const vector<unsigned int> &arr, SortingVisualizer &visualizer);
-    ~BubbleSort();
+    InsertionSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
+    ~InsertionSort();
     void start();
 
 private:
     vector<unsigned int> mArr;
-    SortingVisualizer &mVisualizer;
+    SortingVisualizer& mVisualizer;
 
     void runStep();
     void end() const;
