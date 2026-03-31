@@ -1,0 +1,22 @@
+#pragma once
+
+#include "algoVisualizer/algorithm/sorting/interface/ISortingAlgorithm.hpp"
+#include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <vector>
+
+using namespace std;
+
+class SelectionSort : private ISortingAlgorithm
+{
+public:
+    SelectionSort(const vector<unsigned int> &arr, SortingVisualizer &visualizer);
+    ~SelectionSort();
+    void start();
+
+private:
+    vector<unsigned int> mArr;
+    SortingVisualizer &mVisualizer;
+
+    void runStep();
+    void end() const;
+};
