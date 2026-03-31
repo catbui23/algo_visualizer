@@ -1,5 +1,4 @@
 #include "algoVisualizer/algorithm/sorting/implementations/InsertionSort.hpp"
-#include "algoVisualizer/algorithm/sorting/interface/SortStep.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
 #include <utility>
 #include <vector>
@@ -25,12 +24,10 @@ void InsertionSort::runStep()
     for (size_t i = 1; i < n; ++i) {
         size_t j = i - 1;
         do {
-            SortStep compareStep = { j, j + 1, StepType::COMPARE };
-            mVisualizer.updateSortStep(compareStep);
+            mVisualizer.compareStep(j, j + 1);
             if (mArr[j] > mArr[j + 1]) {
-                SortStep swapStep = { j, j + 1, StepType::SWAP };
-                mVisualizer.updateSortStep(swapStep);
                 swap(mArr[j], mArr[j + 1]);
+                mVisualizer.swapStep(j, j + 1);
             } else {
                 break;
             }
