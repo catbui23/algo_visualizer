@@ -30,7 +30,6 @@ SortingVisualizer::SortingVisualizer(const string name,
 
 SortingVisualizer::~SortingVisualizer()
 {
-    // move to the end of frame
     printFinalFrame();
 }
 
@@ -73,6 +72,18 @@ void SortingVisualizer::assignStep(const size_t i, const unsigned int value)
     printFrame([&](size_t idx) {
         if (idx == i) {
             cout << ANSI_COLOR::RED;
+        } else {
+            cout << ANSI_COLOR::RESET;
+        }
+    });
+}
+
+void SortingVisualizer::accessStep(const size_t i)
+{
+    mCntOp++;
+    printFrame([&](size_t idx) {
+        if (idx == i) {
+            cout << ANSI_COLOR::YELLOW;
         } else {
             cout << ANSI_COLOR::RESET;
         }
