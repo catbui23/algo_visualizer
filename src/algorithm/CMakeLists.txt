@@ -6,5 +6,6 @@ add_library(algorithm
             sorting/ThreeWayMergeSort.cpp
             sorting/QuickSort.cpp
             sorting/HeapSort.cpp
-            sorting/CycleSort.cpp)
+            sorting/CycleSort.cpp
+            sorting/RadixSort.cpp)
 target_include_directories(algorithm PRIVATE ${PROJECT_SOURCE_DIR}/include)
