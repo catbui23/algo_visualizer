@@ -3,6 +3,7 @@ add_library(algorithm
             sorting/InsertionSort.cpp
             sorting/SelectionSort.cpp
             sorting/MergeSort.cpp
+            sorting/ThreeWayMergeSort.cpp
             sorting/QuickSort.cpp
             sorting/HeapSort.cpp
             sorting/CycleSort.cpp)
