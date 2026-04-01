@@ -3,5 +3,7 @@ add_library(algorithm
             sorting/InsertionSort.cpp
             sorting/SelectionSort.cpp
             sorting/MergeSort.cpp
-            sorting/QuickSort.cpp)
+            sorting/QuickSort.cpp
+            sorting/HeapSort.cpp
+            sorting/CycleSort.cpp)
 target_include_directories(algorithm PRIVATE ${PROJECT_SOURCE_DIR}/include)

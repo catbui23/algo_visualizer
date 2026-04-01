@@ -16,6 +16,7 @@ public:
     void compareStep(const size_t i, const size_t j);
     void swapStep(const size_t i, const size_t j);
     void assignStep(const size_t i, const unsigned int value);
+    void accessStep(const size_t i);
     void printFinalFrame() const;
 
 private:
