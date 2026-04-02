@@ -8,5 +8,6 @@ add_library(algorithm
             sorting/HeapSort.cpp
             sorting/CycleSort.cpp
             sorting/RadixSort.cpp
-            sorting/IntroSort.cpp)
+            sorting/IntroSort.cpp
+            sorting/TimSort.cpp)
 target_include_directories(algorithm PRIVATE ${PROJECT_SOURCE_DIR}/include)
