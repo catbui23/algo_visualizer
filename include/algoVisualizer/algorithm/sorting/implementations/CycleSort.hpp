@@ -16,7 +16,7 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     size_t findPosition(const size_t start, const unsigned int item) const;
     size_t skipDuplicates(const size_t start, const unsigned int item) const;
     void end() const;

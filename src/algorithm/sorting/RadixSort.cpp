@@ -15,10 +15,10 @@ RadixSort::~RadixSort() { }
 
 void RadixSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void RadixSort::runStep()
+void RadixSort::runAlgorithm()
 {
     unsigned int maxVal = findMax();
 
@@ -42,13 +42,15 @@ void RadixSort::countSort(const unsigned int exp)
     int n = mArr.size();
     vector<unsigned int> tmpArr(n, 0);
     int cnt[10] = { 0 };
-    for (unsigned int val : mArr) {
-        cnt[(val / exp) % 10]++;
+    for (int i = 0; i < n; ++i) {
+        mVisualizer.accessStep(i);
+        cnt[(mArr[i] / exp) % 10]++;
     }
     for (int i = 1; i < 10; ++i) {
         cnt[i] += cnt[i - 1];
     }
     for (int i = n - 1; i >= 0; --i) {
+        mVisualizer.accessStep(i);
         tmpArr[cnt[(mArr[i] / exp) % 10] - 1] = mArr[i];
         cnt[(mArr[i] / exp) % 10]--;
     }

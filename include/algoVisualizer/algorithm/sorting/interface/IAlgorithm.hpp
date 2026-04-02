@@ -6,6 +6,6 @@ public:
     virtual void start() = 0;
 
 private:
-    virtual void runStep() = 0;
+    virtual void runAlgorithm() = 0;
     virtual void end() const = 0;
 };

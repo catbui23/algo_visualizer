@@ -15,10 +15,10 @@ HeapSort::~HeapSort() { }
 
 void HeapSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void HeapSort::runStep()
+void HeapSort::runAlgorithm()
 {
     int n = mArr.size();
     for (int i = n / 2 - 1; i >= 0; --i) {
@@ -52,8 +52,8 @@ void HeapSort::heapify(size_t n, size_t i)
     }
 
     if (largest != i) {
-        swap(mArr[i], mArr[largest]);
         mVisualizer.swapStep(i, largest);
+        swap(mArr[i], mArr[largest]);
         heapify(n, largest);
     }
 }

@@ -17,10 +17,10 @@ TimSort::~TimSort() { }
 
 void TimSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void TimSort::runStep()
+void TimSort::runAlgorithm()
 {
     size_t n = mArr.size();
     unsigned int minRun = calculateMinRun();
@@ -137,13 +137,22 @@ size_t TimSort::findRun(size_t start)
         return end;
     }
     if (mArr[end] < mArr[start]) {
-        while (end < n && mArr[end] < mArr[end - 1]) {
-            end++;
+        while (end < n) {
+            mVisualizer.compareStep(end, end - 1);
+            if (mArr[end] < mArr[end - 1]) {
+                end++;
+            } else {
+                break;
+            }
         }
         reverseSection(start, end);
     } else {
-        while (end < n && mArr[end] >= mArr[end - 1]) {
-            end++;
+        while (end < n) {
+            mVisualizer.compareStep(end, end - 1);
+            if (mArr[end] >= mArr[end - 1]) {
+                end++;
+            }
+            break;
         }
     }
 

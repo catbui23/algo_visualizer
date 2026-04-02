@@ -16,7 +16,7 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     unsigned int findMax() const;
     void countSort(const unsigned int n);
     void end() const;

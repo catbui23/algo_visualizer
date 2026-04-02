@@ -16,7 +16,7 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     void quickSort(int l, int r);
     int partition(int l, int r);
     void end() const;

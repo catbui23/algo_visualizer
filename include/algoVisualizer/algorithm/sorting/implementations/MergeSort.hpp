@@ -16,7 +16,7 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     void end() const;
     void mergeSort(size_t l, size_t r);
     void mergeArr(size_t start, size_t mid, size_t end);

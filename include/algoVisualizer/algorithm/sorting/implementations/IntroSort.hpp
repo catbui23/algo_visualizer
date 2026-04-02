@@ -18,10 +18,11 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     void insertionSort(const int left, const int right);
     int medianOfThree(const int a, const int b, const int c) const;
     int partition(const int low, const int high);
+    void heapify(const int begin, const int heapSize, const int root);
     void heapSort(const int begin, const int end);
     void introSort(const int begin, const int end, const int depthLimit);
     void end() const;

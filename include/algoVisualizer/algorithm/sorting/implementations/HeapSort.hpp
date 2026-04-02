@@ -16,7 +16,7 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     void heapify(size_t n, size_t i);
     void end() const;
 };

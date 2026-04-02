@@ -15,10 +15,10 @@ QuickSort::~QuickSort() { }
 
 void QuickSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void QuickSort::runStep()
+void QuickSort::runAlgorithm()
 {
     quickSort(0, mArr.size() - 1);
 }
@@ -39,6 +39,7 @@ int QuickSort::partition(int l, int r)
     int i = l - 1;
 
     for (int j = l; j <= r - 1; ++j) {
+        mVisualizer.accessStep(j);
         if (mArr[j] < pivot) {
             i++;
             mVisualizer.swapStep(i, j);

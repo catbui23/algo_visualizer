@@ -17,7 +17,7 @@ private:
     vector<unsigned int> mArr;
     SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     unsigned int calculateMinRun() const;
     void insertionSort(const size_t left, const size_t right);
     void merge(const size_t left, const size_t mid, const size_t right);

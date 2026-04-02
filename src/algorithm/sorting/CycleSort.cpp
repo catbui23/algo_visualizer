@@ -16,10 +16,10 @@ CycleSort::~CycleSort() { }
 
 void CycleSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void CycleSort::runStep()
+void CycleSort::runAlgorithm()
 {
     size_t n = mArr.size();
     for (size_t start = 0; start < n - 1; ++start) {
@@ -72,8 +72,13 @@ size_t CycleSort::skipDuplicates(const size_t start, const unsigned int item) co
 {
     size_t pos = start;
     size_t n = mArr.size();
-    while (pos < n && item == mArr[pos]) {
-        pos++;
+    while (pos < n) {
+        mVisualizer.accessStep(pos);
+        if (item == mArr[pos]) {
+            pos++;
+        } else {
+            break;
+        }
     }
     return pos;
 }

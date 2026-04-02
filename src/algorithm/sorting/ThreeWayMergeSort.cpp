@@ -16,10 +16,10 @@ ThreeWayMergeSort::~ThreeWayMergeSort() { }
 
 void ThreeWayMergeSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void ThreeWayMergeSort::runStep()
+void ThreeWayMergeSort::runAlgorithm()
 {
     threeWayMergeSort(0, mArr.size() - 1);
 }
@@ -51,12 +51,15 @@ void ThreeWayMergeSort::mergeArr(size_t l, size_t m1, size_t m2, size_t r)
     vector<unsigned int> leftArr(size1), midArr(size2), rightArr(size3);
 
     for (size_t i = 0; i < size1; ++i) {
+        mVisualizer.accessStep(l + i);
         leftArr[i] = mArr[l + i];
     }
     for (size_t i = 0; i < size2; ++i) {
+        mVisualizer.accessStep(m1 + 1 + i);
         midArr[i] = mArr[m1 + 1 + i];
     }
     for (size_t i = 0; i < size3; ++i) {
+        mVisualizer.accessStep(m2 + 1 + i);
         rightArr[i] = mArr[m2 + 1 + i];
     }
 

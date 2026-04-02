@@ -15,10 +15,10 @@ BubbleSort::~BubbleSort() { }
 
 void BubbleSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void BubbleSort::runStep()
+void BubbleSort::runAlgorithm()
 {
     int n = mArr.size();
     bool isSwap;

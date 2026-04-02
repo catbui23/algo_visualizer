@@ -18,10 +18,10 @@ IntroSort::~IntroSort() { }
 
 void IntroSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void IntroSort::runStep()
+void IntroSort::runAlgorithm()
 {
     if (mArr.empty()) {
         return;
@@ -51,34 +51,25 @@ void IntroSort::insertionSort(const int left, const int right)
     }
 }
 
-int IntroSort::medianOfThree(const int a, const int b, const int c) const
+int IntroSort::medianOfThree(int a, int b, int c) const
 {
     mVisualizer.compareStep(a, b);
+
     if (mArr[a] < mArr[b]) {
         mVisualizer.compareStep(b, c);
-        if (mArr[b] < mArr[c]) {
+        if (mArr[b] < mArr[c])
             return b;
-        } else {
-            mVisualizer.compareStep(a, c);
-            if (mArr[a] < mArr[c]) {
-                return c;
-            } else {
-                return a;
-            }
-        }
-    } else {
+
         mVisualizer.compareStep(a, c);
-        if (mArr[a] < mArr[c]) {
-            return a;
-        } else {
-            mVisualizer.compareStep(b, c);
-            if (mArr[b] < mArr[c]) {
-                return c;
-            } else {
-                return b;
-            }
-        }
+        return (mArr[a] < mArr[c]) ? c : a;
     }
+
+    mVisualizer.compareStep(a, c);
+    if (mArr[a] < mArr[c])
+        return a;
+
+    mVisualizer.compareStep(b, c);
+    return (mArr[b] < mArr[c]) ? c : b;
 }
 
 int IntroSort::partition(const int low, const int high)
@@ -99,10 +90,48 @@ int IntroSort::partition(const int low, const int high)
     return i + 1;
 }
 
+void IntroSort::heapify(const int begin, const int heapSize, const int root)
+{
+    int largest = root;
+    int left = 2 * (root - begin) + 1 + begin;
+    int right = 2 * (root - begin) + 2 + begin;
+
+    if (left < begin + heapSize) {
+        mVisualizer.compareStep(left, largest);
+        if (mArr[left] > mArr[largest]) {
+            largest = left;
+        }
+    }
+
+    if (right < begin + heapSize) {
+        mVisualizer.compareStep(right, largest);
+        if (mArr[right] > mArr[largest]) {
+            largest = right;
+        }
+    }
+
+    if (largest != root) {
+        mVisualizer.swapStep(root, largest);
+        swap(mArr[root], mArr[largest]);
+
+        heapify(begin, heapSize, largest);
+    }
+}
+
 void IntroSort::heapSort(const int begin, const int end)
 {
-    make_heap(mArr.begin() + begin, mArr.begin() + end + 1);
-    sort_heap(mArr.begin() + begin, mArr.begin() + end + 1);
+    int n = end - begin + 1;
+
+    for (int i = begin + n / 2 - 1; i >= begin; i--) {
+        heapify(begin, n, i);
+    }
+
+    for (int i = end; i > begin; i--) {
+        mVisualizer.swapStep(begin, i);
+        swap(mArr[begin], mArr[i]);
+
+        heapify(begin, i - begin, begin);
+    }
 }
 
 void IntroSort::introSort(const int begin, const int end, const int depthLimit)

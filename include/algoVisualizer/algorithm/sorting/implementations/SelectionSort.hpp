@@ -6,17 +6,16 @@
 
 using namespace std;
 
-class SelectionSort : private ISortingAlgorithm
-{
+class SelectionSort : private ISortingAlgorithm {
 public:
-    SelectionSort(const vector<unsigned int> &arr, SortingVisualizer &visualizer);
+    SelectionSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~SelectionSort();
     void start();
 
 private:
     vector<unsigned int> mArr;
-    SortingVisualizer &mVisualizer;
+    SortingVisualizer& mVisualizer;
 
-    void runStep();
+    void runAlgorithm();
     void end() const;
 };

@@ -15,10 +15,10 @@ InsertionSort::~InsertionSort() { }
 
 void InsertionSort::start()
 {
-    runStep();
+    runAlgorithm();
 };
 
-void InsertionSort::runStep()
+void InsertionSort::runAlgorithm()
 {
     int n = mArr.size();
     for (size_t i = 1; i < n; ++i) {
@@ -26,8 +26,8 @@ void InsertionSort::runStep()
         do {
             mVisualizer.compareStep(j, j + 1);
             if (mArr[j] > mArr[j + 1]) {
-                swap(mArr[j], mArr[j + 1]);
                 mVisualizer.swapStep(j, j + 1);
+                swap(mArr[j], mArr[j + 1]);
             } else {
                 break;
             }

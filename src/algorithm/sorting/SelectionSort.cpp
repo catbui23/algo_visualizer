@@ -17,10 +17,10 @@ SelectionSort::~SelectionSort()
 
 void SelectionSort::start()
 {
-    runStep();
+    runAlgorithm();
 }
 
-void SelectionSort::runStep()
+void SelectionSort::runAlgorithm()
 {
     int n = mArr.size();
     for (size_t i = 0; i < n - 1; ++i) {
