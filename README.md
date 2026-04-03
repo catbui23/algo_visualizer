@@ -37,7 +37,19 @@ The visualizer supports tracking and displaying the following operations:
 - Accessing
 - Assigning
 
-## Demo (Comming soon)
+## Demo
+
+Bubble Sort
+
+https://github.com/user-attachments/assets/f6fe555b-ec41-4916-bb85-7165a6ec529d
+
+Merge Sort
+
+https://github.com/user-attachments/assets/de3aae10-dd2f-4f94-8256-3b0b9b2dd315
+
+Quick Sort
+
+https://github.com/user-attachments/assets/cdc49789-1269-435b-a3f9-5504770a615a
 
 ## Current Status
 
