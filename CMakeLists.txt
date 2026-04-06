@@ -14,6 +14,8 @@ add_subdirectory(src/core)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/third_party)
+
 target_link_libraries(${PROJECT_NAME} algorithm)
 target_link_libraries(${PROJECT_NAME} modules)
 target_link_libraries(${PROJECT_NAME} utils)

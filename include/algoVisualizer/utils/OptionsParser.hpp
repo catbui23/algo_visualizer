@@ -14,4 +14,5 @@ public:
 
 private:
     static vector<unsigned int> parseArray(const string& input);
+    static Options parseJsonFile(string filePath);
 };
