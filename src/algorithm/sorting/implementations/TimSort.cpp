@@ -154,8 +154,9 @@ size_t TimSort::findRun(size_t start)
             mVisualizer.compareStep(end, end - 1);
             if (mArr[end] >= mArr[end - 1]) {
                 end++;
+            } else {
+                break;
             }
-            break;
         }
     }
 
@@ -164,10 +165,10 @@ size_t TimSort::findRun(size_t start)
 
 void TimSort::reverseSection(const size_t begin, const size_t end)
 {
-    for (size_t i = begin; i < begin + (end - begin) / 2; ++i) {
-        size_t j = end - i + begin;
-        mVisualizer.swapStep(i, j);
-        swap(mArr[i], mArr[j]);
+    size_t l = begin, r = end - 1;
+    while (l < r) {
+        mVisualizer.swapStep(l, r);
+        swap(mArr[l++], mArr[r--]);
     }
 }
 
