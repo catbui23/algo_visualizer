@@ -12,7 +12,10 @@ CycleSort::CycleSort(const vector<unsigned int>& arr, SortingVisualizer& visuali
 {
 }
 
-CycleSort::~CycleSort() { }
+CycleSort::~CycleSort()
+{
+    end();
+}
 
 void CycleSort::start()
 {

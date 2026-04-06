@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class BubbleSort : private ISortingAlgorithm {
+class BubbleSort : public ISortingAlgorithm {
 public:
     BubbleSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~BubbleSort();

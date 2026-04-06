@@ -12,7 +12,10 @@ ThreeWayMergeSort::ThreeWayMergeSort(const vector<unsigned int>& arr, SortingVis
 {
 }
 
-ThreeWayMergeSort::~ThreeWayMergeSort() { }
+ThreeWayMergeSort::~ThreeWayMergeSort()
+{
+    end();
+}
 
 void ThreeWayMergeSort::start()
 {

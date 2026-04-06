@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class CycleSort : private ISortingAlgorithm {
+class CycleSort : public ISortingAlgorithm {
 public:
     CycleSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~CycleSort();

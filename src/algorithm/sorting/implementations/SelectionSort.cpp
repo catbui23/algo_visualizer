@@ -13,6 +13,7 @@ SelectionSort::SelectionSort(const vector<unsigned int>& arr, SortingVisualizer&
 
 SelectionSort::~SelectionSort()
 {
+    end();
 }
 
 void SelectionSort::start()
