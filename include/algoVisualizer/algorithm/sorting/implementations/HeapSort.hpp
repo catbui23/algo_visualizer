@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class HeapSort : private ISortingAlgorithm {
+class HeapSort : public ISortingAlgorithm {
 public:
     HeapSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~HeapSort();

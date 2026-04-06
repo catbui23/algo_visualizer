@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class RadixSort : private ISortingAlgorithm {
+class RadixSort : public ISortingAlgorithm {
 public:
     RadixSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~RadixSort();

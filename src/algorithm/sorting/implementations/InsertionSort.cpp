@@ -11,7 +11,10 @@ InsertionSort::InsertionSort(const vector<unsigned int>& arr, SortingVisualizer&
 {
 }
 
-InsertionSort::~InsertionSort() { }
+InsertionSort::~InsertionSort()
+{
+    end();
+}
 
 void InsertionSort::start()
 {

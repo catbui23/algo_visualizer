@@ -11,7 +11,10 @@ MergeSort::MergeSort(const vector<unsigned int>& arr, SortingVisualizer& visuali
 {
 }
 
-MergeSort::~MergeSort() { }
+MergeSort::~MergeSort()
+{
+    end();
+}
 
 void MergeSort::start()
 {

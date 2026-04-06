@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class TimSort : private ISortingAlgorithm {
+class TimSort : public ISortingAlgorithm {
 public:
     TimSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~TimSort();

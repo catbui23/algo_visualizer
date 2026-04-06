@@ -13,7 +13,10 @@ TimSort::TimSort(const vector<unsigned int>& arr, SortingVisualizer& visualier)
 {
 }
 
-TimSort::~TimSort() { }
+TimSort::~TimSort()
+{
+    end();
+}
 
 void TimSort::start()
 {

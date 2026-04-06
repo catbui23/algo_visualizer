@@ -1,13 +1,14 @@
 add_library(algorithm
-            sorting/BubbleSort.cpp
-            sorting/InsertionSort.cpp
-            sorting/SelectionSort.cpp
-            sorting/MergeSort.cpp
-            sorting/ThreeWayMergeSort.cpp
-            sorting/QuickSort.cpp
-            sorting/HeapSort.cpp
-            sorting/CycleSort.cpp
-            sorting/RadixSort.cpp
-            sorting/IntroSort.cpp
-            sorting/TimSort.cpp)
+            sorting/implementations/BubbleSort.cpp
+            sorting/implementations/InsertionSort.cpp
+            sorting/implementations/SelectionSort.cpp
+            sorting/implementations/MergeSort.cpp
+            sorting/implementations/ThreeWayMergeSort.cpp
+            sorting/implementations/QuickSort.cpp
+            sorting/implementations/HeapSort.cpp
+            sorting/implementations/CycleSort.cpp
+            sorting/implementations/RadixSort.cpp
+            sorting/implementations/IntroSort.cpp
+            sorting/implementations/TimSort.cpp
+            sorting/SortingFactory.cpp)
 target_include_directories(algorithm PRIVATE ${PROJECT_SOURCE_DIR}/include)

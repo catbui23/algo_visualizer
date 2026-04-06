@@ -11,7 +11,10 @@ QuickSort::QuickSort(const vector<unsigned int>& arr, SortingVisualizer& visuali
 {
 }
 
-QuickSort::~QuickSort() { }
+QuickSort::~QuickSort()
+{
+    end();
+}
 
 void QuickSort::start()
 {

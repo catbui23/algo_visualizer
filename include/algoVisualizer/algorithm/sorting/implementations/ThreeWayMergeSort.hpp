@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class ThreeWayMergeSort : private ISortingAlgorithm {
+class ThreeWayMergeSort : public ISortingAlgorithm {
 public:
     ThreeWayMergeSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~ThreeWayMergeSort();

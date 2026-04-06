@@ -28,11 +28,6 @@ SortingVisualizer::SortingVisualizer(const string name,
     printStarterFrame();
 }
 
-SortingVisualizer::~SortingVisualizer()
-{
-    printFinalFrame();
-}
-
 void SortingVisualizer::render() const { }
 
 void SortingVisualizer::printHeader() const

@@ -11,7 +11,10 @@ RadixSort::RadixSort(const vector<unsigned int>& arr, SortingVisualizer& visuali
 {
 }
 
-RadixSort::~RadixSort() { }
+RadixSort::~RadixSort()
+{
+    end();
+}
 
 void RadixSort::start()
 {

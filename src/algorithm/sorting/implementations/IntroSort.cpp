@@ -14,7 +14,10 @@ IntroSort::IntroSort(const vector<unsigned int>& arr, SortingVisualizer& visuali
 {
 }
 
-IntroSort::~IntroSort() { }
+IntroSort::~IntroSort()
+{
+    end();
+}
 
 void IntroSort::start()
 {

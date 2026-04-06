@@ -11,7 +11,10 @@ BubbleSort::BubbleSort(const vector<unsigned int>& arr, SortingVisualizer& visua
 {
 }
 
-BubbleSort::~BubbleSort() { }
+BubbleSort::~BubbleSort()
+{
+    end();
+}
 
 void BubbleSort::start()
 {

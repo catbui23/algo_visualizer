@@ -10,7 +10,6 @@ using namespace std;
 class SortingVisualizer : public IVisualizer {
 public:
     SortingVisualizer(const string name, const vector<unsigned int>& arr);
-    ~SortingVisualizer();
     void render() const;
     void printHeader() const;
     void compareStep(const size_t i, const size_t j);

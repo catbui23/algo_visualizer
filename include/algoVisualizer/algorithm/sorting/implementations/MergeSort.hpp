@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class MergeSort : private ISortingAlgorithm {
+class MergeSort : public ISortingAlgorithm {
 public:
     MergeSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~MergeSort();

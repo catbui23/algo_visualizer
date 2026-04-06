@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class QuickSort : private ISortingAlgorithm {
+class QuickSort : public ISortingAlgorithm {
 public:
     QuickSort(const vector<unsigned int>& arr, SortingVisualizer& visualizer);
     ~QuickSort();

@@ -11,7 +11,10 @@ HeapSort::HeapSort(const vector<unsigned int>& arr, SortingVisualizer& visualier
 {
 }
 
-HeapSort::~HeapSort() { }
+HeapSort::~HeapSort()
+{
+    end();
+}
 
 void HeapSort::start()
 {
