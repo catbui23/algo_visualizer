@@ -15,7 +15,6 @@ Algorithm Visualizer - Command Line Usage
 
 USAGE:
   algo_visualizer [OPTIONS]
-  algo_visualizer <algorithm> <input_type> <value>
 
 OPTIONS:
   -h, --help
