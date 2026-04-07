@@ -1,5 +1,6 @@
 #include "algoVisualizer/algorithm/sorting/implementations/QuickSort.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <cassert>
 #include <utility>
 #include <vector>
 
@@ -19,6 +20,8 @@ QuickSort::~QuickSort()
 void QuickSort::start()
 {
     runAlgorithm();
+    bool isSorted = is_sorted(mArr.begin(), mArr.end());
+    assert(isSorted);
 };
 
 void QuickSort::runAlgorithm()

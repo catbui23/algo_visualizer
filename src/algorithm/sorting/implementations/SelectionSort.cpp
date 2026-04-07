@@ -1,5 +1,6 @@
 #include "algoVisualizer/algorithm/sorting/implementations/SelectionSort.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <cassert>
 #include <utility>
 #include <vector>
 
@@ -19,6 +20,8 @@ SelectionSort::~SelectionSort()
 void SelectionSort::start()
 {
     runAlgorithm();
+    bool isSorted = is_sorted(mArr.begin(), mArr.end());
+    assert(isSorted);
 }
 
 void SelectionSort::runAlgorithm()

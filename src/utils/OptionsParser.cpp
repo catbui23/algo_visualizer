@@ -40,7 +40,6 @@ Options OptionsParser::parse(int argc, char* argv[])
             return opts;
         }
     }
-    cerr << "Not from file\n";
     string algorithm = argv[1];
     // algorithm name
     if (!SortingFactory::isValid(algorithm)) {

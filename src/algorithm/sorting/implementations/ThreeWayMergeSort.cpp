@@ -1,5 +1,6 @@
 #include "algoVisualizer/algorithm/sorting/implementations/ThreeWayMergeSort.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <cassert>
 #include <climits>
 #include <utility>
 #include <vector>
@@ -20,6 +21,8 @@ ThreeWayMergeSort::~ThreeWayMergeSort()
 void ThreeWayMergeSort::start()
 {
     runAlgorithm();
+    bool isSorted = is_sorted(mArr.begin(), mArr.end());
+    assert(isSorted);
 };
 
 void ThreeWayMergeSort::runAlgorithm()

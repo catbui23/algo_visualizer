@@ -1,5 +1,6 @@
 #include "algoVisualizer/algorithm/sorting/implementations/IntroSort.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <cassert>
 #include <cmath>
 #include <utility>
 #include <vector>
@@ -22,6 +23,8 @@ IntroSort::~IntroSort()
 void IntroSort::start()
 {
     runAlgorithm();
+    bool isSorted = is_sorted(mArr.begin(), mArr.end());
+    assert(isSorted);
 };
 
 void IntroSort::runAlgorithm()

@@ -1,5 +1,6 @@
 #include "algoVisualizer/algorithm/sorting/implementations/CycleSort.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <cassert>
 #include <iostream>
 #include <utility>
 #include <vector>
@@ -20,6 +21,8 @@ CycleSort::~CycleSort()
 void CycleSort::start()
 {
     runAlgorithm();
+    bool isSorted = is_sorted(mArr.begin(), mArr.end());
+    assert(isSorted);
 };
 
 void CycleSort::runAlgorithm()

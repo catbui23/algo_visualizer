@@ -1,5 +1,6 @@
 #include "algoVisualizer/algorithm/sorting/implementations/TimSort.hpp"
 #include "algoVisualizer/modules/sorting/sortingVisualizer.hpp"
+#include <cassert>
 #include <utility>
 #include <vector>
 
@@ -21,6 +22,8 @@ TimSort::~TimSort()
 void TimSort::start()
 {
     runAlgorithm();
+    bool isSorted = is_sorted(mArr.begin(), mArr.end());
+    assert(isSorted);
 };
 
 void TimSort::runAlgorithm()
