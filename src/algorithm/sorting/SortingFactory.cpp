@@ -85,3 +85,14 @@ const SortingMeta SortingFactory::getMeta(const string algorithm)
     }
     return SORTING_REGISTRY.at(algorithm);
 }
+
+vector<string> SortingFactory::getListAlgo()
+{
+    vector<string> listAlgo;
+
+    for (auto& [name, _] : SORTING_REGISTRY) {
+        listAlgo.push_back(name);
+    }
+
+    return listAlgo;
+}

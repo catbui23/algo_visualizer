@@ -17,4 +17,6 @@ public:
 private:
     static vector<unsigned int> generateRandomVector(const unsigned int size);
     static void printHelp();
+    static void printAlgorithm();
+    static const string HELP_MESSAGE;
 };

@@ -21,7 +21,10 @@ Options OptionsParser::parse(int argc, char* argv[])
     }
     string arg1 = argv[1];
     if (arg1 == "help" || arg1 == "-h" || arg1 == "--help") {
-        opts.showHelp;
+        opts.showHelp = true;
+        return opts;
+    } else if (arg1 == "-l" || arg1 == "--list") {
+        opts.listAlgo = true;
         return opts;
     } else if (arg1 == "-f" || arg1 == "--file") {
         if (argc < 3) {
@@ -33,7 +36,7 @@ Options OptionsParser::parse(int argc, char* argv[])
             return parseJsonFile(filePath);
         } catch (const exception& e) {
             cerr << "Error while processing file: " << e.what() << "\n";
-            opts.showHelp;
+            opts.showHelp = true;
             return opts;
         }
     }
@@ -46,7 +49,7 @@ Options OptionsParser::parse(int argc, char* argv[])
     }
     if (argc < 4) {
         cerr << "Missing input argument\n";
-        opts.showHelp;
+        opts.showHelp = true;
         return opts;
     }
     opts.algorithm = algorithm;
@@ -60,7 +63,7 @@ Options OptionsParser::parse(int argc, char* argv[])
             cerr << e.what() << "\n";
             opts.showHelp = true;
         }
-    } else if (inputType == "--random") {
+    } else if (inputType == "--randomize") {
         opts.randomize = true;
         try {
             opts.size = stoul(inputVal);
@@ -104,7 +107,7 @@ Options OptionsParser::parseJsonFile(string filePath)
     Options opts = {
         data.value("algorithm", ""),
         data.value("array", vector<unsigned int>()),
-        data.value("random", false),
+        data.value("randomize", false),
         data.value("size", 0),
         false,
     };

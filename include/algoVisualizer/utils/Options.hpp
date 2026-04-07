@@ -12,4 +12,5 @@ struct Options {
     bool randomize = false;
     optional<unsigned int> size;
     bool showHelp = false;
+    bool listAlgo = false;
 };
