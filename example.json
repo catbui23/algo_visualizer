@@ -1,0 +1,5 @@
+{
+    "algorithm": "heap",
+    "randomize": true,
+    "size": 100
+}
